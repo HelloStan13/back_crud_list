@@ -15,3 +15,16 @@ public class TareasController {
     public Iterable<TareasModel> list() {
         return service.list();
     }
+
+    @PostMapping(value = "api/todo")
+    public TareasModel save(@RequestBody TareasModel tarea) {
+        return service.save(tarea);
+    }
+
+    @PutMapping(value = "api/todo")
+    public TareasModel update(@RequestBody TareasModel tarea) {
+        if (tarea.getId() != null) {
+            return service.save(tarea);
+        }
+        throw new RuntimeException("No existe el ID");
+    }
