@@ -28,3 +28,13 @@ public class TareasController {
         }
         throw new RuntimeException("No existe el ID");
     }
+    @GetMapping(value = "api/{id}/todo")
+    public TareasModel get(@PathVariable("id") Long id) {
+        return service.get(id);
+    }
+
+    @DeleteMapping(value = "api/{id}/todo")
+    public void delete(@PathVariable("id") Long id) {
+        service.delete(id);
+    }
+}
