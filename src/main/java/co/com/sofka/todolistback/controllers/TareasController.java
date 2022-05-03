@@ -10,29 +10,29 @@ public class TareasController {
     @Autowired
     private TareaService service;
 
-    @GetMapping(value = "api/todos")
+    @GetMapping(value = "api/task")
     public Iterable<TareasModel> list() {
         return service.list();
     }
 
-    @PostMapping(value = "api/todo")
+    @PostMapping(value = "api/task")
     public TareasModel save(@RequestBody TareasModel tarea) {
         return service.save(tarea);
     }
 
-    @PutMapping(value = "api/todo")
+    @PutMapping(value = "api/task")
     public TareasModel update(@RequestBody TareasModel tarea) {
         if (tarea.getId() != null) {
             return service.save(tarea);
         }
         throw new RuntimeException("No existe el ID");
     }
-    @GetMapping(value = "api/{id}/todo")
+    @GetMapping(value = "api/{id}/task")
     public TareasModel get(@PathVariable("id") Long id) {
         return service.get(id);
     }
 
-    @DeleteMapping(value = "api/{id}/todo")
+    @DeleteMapping(value = "api/{id}/task")
     public void delete(@PathVariable("id") Long id) {
         service.delete(id);
     }
