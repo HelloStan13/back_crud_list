@@ -4,7 +4,7 @@
 
 ## Repositorio Front-End:
 
-https://github.com/HelloStan13/App_React.git
+https://github.com/HelloStan13/Front_Crud_List.git
 
 ## Descripcion:
 
